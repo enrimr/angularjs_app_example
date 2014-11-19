@@ -3,7 +3,10 @@ angular
 	.controller("PelisCtrl", function($scope){
 		$scope.movie = {
 			title: "The Matrix",
-			year: 1999
+			year: 1999,
+			verOraculo: function(){
+				alert("Ey!");
+			}
 		};
 
 		var serie = {
