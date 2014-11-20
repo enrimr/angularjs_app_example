@@ -1,9 +1,11 @@
-<button ng-click="ejecutarPromesa()">Ejecutar Promesa</button>
-<table>
+<!--<button ng-click="ejecutarPromesa()">Ejecutar Promesa</button>-->
+<table class="table table-striped">
 	<tbody>
 		<tr ng-repeat="pelicula in peliculas">
-			<td>{{pelicula.original_title}}</td>
+			<td><img ng-src="{{ obtenerRutaImagen(pelicula.backdrop_path) }}" /></td>
+			<td>{{ pelicula.original_title }}</td>
+			<td>{{ pelicula.release_date }}</td>
 		</tr>
 	</tbody>
 </table>
-<button ng-click="lanzarEmit()">Lanzar evento hacia arriba</button>
+<!--<button ng-click="lanzarEmit()">Lanzar evento hacia arriba</button>-->
