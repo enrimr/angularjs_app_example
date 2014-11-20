@@ -1,7 +1,15 @@
 angular.module("pelis", ["ngRoute", "view-segment", "route-segment"]);
 
-angular.module("pelis").config(["$routeSegmentProvider", function($routeSegmentProvider)
+angular
+	.module("pelis")
+	.config(["$routeSegmentProvider", 
+		"$routeProvider", 
+		function($routeSegmentProvider, $routeProvider)
 {
+	$routeProvider.otherwise({
+		redirectTo: "/pelis/proximamente"
+	});
+
 	$routeSegmentProvider.when("/pelis", "pelis"); // "ruta", "identificadorDelSegmento"
 	$routeSegmentProvider.when("/pelis/proximamente", "pelis.proximamente");
 	$routeSegmentProvider.when("/pelis/hoy", "pelis.hoy");
