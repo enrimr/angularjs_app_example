@@ -1,6 +1,11 @@
-<h1>Películas</h1>
-<span>{{movie.title}} {{movie.year}}</span>
-
-<button ng-click="movie.verOraculo()">
-	Ver al oráculo
-</button>
+<nav>
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#/pelis/proximamente">Próximamente</a>
+		</li>
+		<li class="active">
+			<a href="#/pelis/hoy">Hoy</a>
+		</li>
+	</ul>
+</nav>
+<section app-view-segment="1"></section>
