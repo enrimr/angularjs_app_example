@@ -1,2 +1,8 @@
-<h2>Mis pelis 1</h2>
+<table>
+	<tbody>
+		<tr ng-repeat="pelicula in peliculas">
+			<td>{{pelicula.original_title}}</td>
+		</tr>
+	</tbody>
+</table>
 <button ng-click="lanzarEmit()">Lanzar evento hacia arriba</button>

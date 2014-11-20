@@ -9,7 +9,7 @@ angular
 		var language = "es";
 		$http.get(api + "movie/upcoming?api_key="+api_key+"&language="+language).then(
 			function(datos){
-				alert("Todo fue bien");
+				$scope.peliculas = datos.data.results;
 			},
 
 			function(){
