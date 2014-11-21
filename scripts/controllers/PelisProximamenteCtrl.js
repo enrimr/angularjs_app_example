@@ -10,7 +10,7 @@ angular
 		};
 
 		$scope.obtenerRutaImagen = function(path){
-			return ApiService.rutaImagen(path, 45);
+			return ApiService.rutaImagen(path, 90);
 		};
 
 		$scope.peliculas = Peliculas.data.results;

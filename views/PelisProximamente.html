@@ -1,10 +1,10 @@
 <!--<button ng-click="ejecutarPromesa()">Ejecutar Promesa</button>-->
 <table class="table table-striped">
 	<tbody>
-		<tr ng-repeat="pelicula in peliculas | orderBy:'-release_date'">
+		<tr ng-repeat="pelicula in peliculas | orderBy:'release_date'">
 			<td><img ng-src="{{ obtenerRutaImagen(pelicula.backdrop_path) }}" /></td>
 			<td><a href="" ng-click="verDetalle(pelicula.id)">{{ pelicula.original_title }}</a></td>
-			<td>{{ pelicula.release_date | date:"dd/MM/yyyy" }}</td>
+			<td>{{ pelicula.release_date | fechaEstrenoFilter }}</td>
 		</tr>
 	</tbody>
 </table>
