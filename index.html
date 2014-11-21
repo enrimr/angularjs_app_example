@@ -7,6 +7,7 @@
 		<script src="vendor/angular-route.js"></script>
 		<script src="vendor/angular-route-segment.js"></script>
 		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/IndexCtrl.js"></script>
 		<script src="scripts/controllers/PelisCtrl.js"></script>
 		<script src="scripts/controllers/PelisProximamenteCtrl.js"></script>
 		<script src="scripts/controllers/PelisHoyCtrl.js"></script>
@@ -17,12 +18,12 @@
 		<link rel="stylesheet" href="styles/bootstrap.css">
 	</head>
 	<body>
-		<nav>
+		<nav ng-controller="IndexCtrl">
 			<ul class="nav nav-tabs">
-				<li class="active">
+				<li ng-class="{ active: rutaEsPeliculas() }">
 					<a href="#/pelis">Películas</a>
 				</li>
-				<li>
+				<li ng-class="{ active: rutaEsSeries() }">
 					<a href="#/series">Series</a>
 				</li>
 			</ul>
