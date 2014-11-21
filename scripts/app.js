@@ -13,6 +13,7 @@ angular
 	$routeSegmentProvider.when("/pelis", "pelis"); // "ruta", "identificadorDelSegmento"
 	$routeSegmentProvider.when("/pelis/proximamente", "pelis.proximamente");
 	$routeSegmentProvider.when("/pelis/hoy", "pelis.hoy");
+	$routeSegmentProvider.when("/pelis/detalle", "pelis.detalle");
 	$routeSegmentProvider.when("/series", "series");
 	$routeSegmentProvider.when("/series/proximamente", "series.proximamente");
 	$routeSegmentProvider.when("/series/hoy", "series.hoy");
@@ -35,6 +36,17 @@ angular
 	$routeSegmentProvider.within("pelis").segment("hoy", { 
 		controller: "PelisHoyCtrl", 
 		templateUrl: "views/PelisHoy.html"
+	});
+
+	$routeSegmentProvider.within("pelis").segment("detalle", { 
+		controller: "PelisDetalleCtrl", 
+		templateUrl: "views/PelisDetalle.html",
+		resolve: {
+			Pelicula:["ApiService", "$routeParams", function(ApiService, $routeParams){
+				var id = $routeParams.peliculaId;
+				return ApiService.obtenerDatosApi("movie/"+id);
+			}]
+		}
 	});
 
 	$routeSegmentProvider.segment("series", {

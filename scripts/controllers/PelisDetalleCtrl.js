@@ -1,5 +1,5 @@
 angular
     .module("pelis")
-    .controller("PelisCtrl", function($scope) {
-
+    .controller("PelisDetalleCtrl", function($scope, Pelicula) {
+        $scope.pelicula = Pelicula.data;
     });

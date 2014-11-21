@@ -1,6 +1,6 @@
 angular
 	.module("pelis")
-	.controller("PelisProximamenteCtrl", function($scope, $http, ApiService, Peliculas){
+	.controller("PelisProximamenteCtrl", function($scope, ApiService, Peliculas, $location){
 		$scope.$on("MiEvento", function(event, datos){
 			alert(datos);
 		});
@@ -26,8 +26,10 @@ angular
 			}
 		);*/
 
-		$scope.verDetalle = function(){
+		$scope.verDetalle = function(id){
 
-
+			$location.path("/pelis/detalle").search({
+				peliculaId: id
+			});
 		};
 	});
