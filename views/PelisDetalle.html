@@ -1,8 +1,8 @@
-<h1>{{ pelicula.title }}</h1>
+<h3>{{ pelicula.title }}</h1>
 <table>
 	<tbody>
 		<tr>
-			<td></td><td></td>
+			<td><img ng-src="{{ obtenerRutaImagen(pelicula.backdrop_path) }}" /></td>
 		</tr>
 	</tbody>
 </table>
