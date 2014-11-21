@@ -3,7 +3,7 @@
 		<img ng-src="{{ obtenerRutaImagen(peli.backdrop_path) }}" />
 	</td>
 	<td>
-		<a href="" ng-click="verDetalle(peli.id)">{{ peli.original_title }}</a>
+		<a href="" ng-click="selecciona(peli.id)">{{ peli.original_title }}</a>
 	</td>
 	<td>
 		{{ peli.release_date | fechaEstrenoFilter }}

@@ -7,13 +7,21 @@ angular
 			replace: true,
 			templateUrl: "views/ListItem.html",
 			scope: {
-				peli: "="
+				peli: "=",
+				alSeleccionar: "&"
 			},
 			link: function(scope){
 
 				scope.obtenerRutaImagen = function(path){
 					return ApiService.rutaImagen(path, 90);
 				};
+
+				scope.selecciona = function(id){
+					scope.alSeleccionar({
+						itemId: id
+					});
+				};
+
 			}
 		};
 	});

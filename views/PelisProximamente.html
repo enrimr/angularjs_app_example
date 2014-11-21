@@ -1,7 +1,7 @@
 <table class="table table-striped">
 	<tbody>
-		<list-item ng-repeat="pelicula in peliculas | orderBy:'release_date'" peli="pelicula">
-
+		<list-item ng-repeat="pelicula in peliculas | orderBy:'release_date'" 
+				   peli="pelicula" al-seleccionar="verDetalle(itemId)">
 		</list-item>
 	</tbody>
 </table>
