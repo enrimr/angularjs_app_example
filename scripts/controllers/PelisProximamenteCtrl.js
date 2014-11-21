@@ -26,4 +26,8 @@ angular
 			}
 		);*/
 
+		$scope.verDetalle = function(){
+
+
+		};
 	});
