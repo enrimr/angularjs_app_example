@@ -1,9 +1,10 @@
 angular
 	.module("pelis")
-	.filter("fechaEstrenoFilter", function(){
+	.filter("fechaEstrenoFilter", function($filter){
 
 		return function(fecha){
-			return "Se estrena en " + fecha;
+			var nuevaFecha = $filter("date")(fecha, "dd/MM/yyyy");
+			return "Se estrena en " + nuevaFecha;
 		};
 
 	});

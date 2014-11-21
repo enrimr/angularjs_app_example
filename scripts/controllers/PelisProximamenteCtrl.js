@@ -1,6 +1,6 @@
 angular
 	.module("pelis")
-	.controller("PelisProximamenteCtrl", function($scope, ApiService, Peliculas, $location){
+	.controller("PelisProximamenteCtrl", function($scope, ApiService, Peliculas, $location, $filter){
 		$scope.$on("MiEvento", function(event, datos){
 			alert(datos);
 		});
@@ -31,5 +31,10 @@ angular
 			$location.path("/pelis/detalle").search({
 				peliculaId: id
 			});
+		};
+
+		$scope.aplicarFiltroFecha = function(fecha){
+
+			return $filter("fechaEstrenoFilter")(fecha);
 		};
 	});
