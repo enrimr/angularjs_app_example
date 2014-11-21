@@ -1,6 +1,6 @@
 angular
 	.module("pelis")
-	.controller("PelisProximamenteCtrl", function($scope, $http, ApiService){
+	.controller("PelisProximamenteCtrl", function($scope, $http, ApiService, Peliculas){
 		$scope.$on("MiEvento", function(event, datos){
 			alert(datos);
 		});
@@ -13,7 +13,8 @@ angular
 			return ApiService.rutaImagen(path, 45);
 		};
 
-		ApiService.obtenerDatosApi("movie/upcoming").then(
+		$scope.peliculas = Peliculas.data.results;
+		/*ApiService.obtenerDatosApi("movie/upcoming").then(
 			// .get funciona con promesas, no con callbacks.
 			// La primera función se ejecuta si todo ha ido bien
 			function(datos){
@@ -23,6 +24,6 @@ angular
 			function(){
 				alert("Hubo un error");
 			}
-		);
+		);*/
 
 	});

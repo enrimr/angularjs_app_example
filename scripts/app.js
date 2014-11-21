@@ -24,7 +24,12 @@ angular
 
 	$routeSegmentProvider.within("pelis").segment("proximamente", {
 		controller: "PelisProximamenteCtrl", 
-		templateUrl: "views/PelisProximamente.html" 
+		templateUrl: "views/PelisProximamente.html" ,
+		resolve: {
+			Peliculas:["ApiService", function(ApiService){
+				return ApiService.obtenerDatosApi("movie/upcoming");
+			}]
+		}
 	});
 
 	$routeSegmentProvider.within("pelis").segment("hoy", { 
