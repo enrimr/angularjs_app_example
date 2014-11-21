@@ -9,10 +9,6 @@ angular
 			$scope.$emit("MiOtroEvento", "Adios!!"); // Creamos un evento del scope para propagar hacia arriba
 		};
 
-		$scope.obtenerRutaImagen = function(path){
-			return ApiService.rutaImagen(path, 90);
-		};
-
 		$scope.peliculas = Peliculas.data.results;
 		/*ApiService.obtenerDatosApi("movie/upcoming").then(
 			// .get funciona con promesas, no con callbacks.
